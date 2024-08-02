@@ -21,6 +21,12 @@ class WeatherApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
+                appBarTheme: AppBarTheme(
+                  backgroundColor: getThemeColor(
+                      BlocProvider.of<GetWeatherCubit>(context)
+                          .weatherModel
+                          ?.weatheCondition),
+                ),
                 primarySwatch: getThemeColor(
                   BlocProvider.of<GetWeatherCubit>(context)
                       .weatherModel
@@ -77,7 +83,7 @@ MaterialColor getThemeColor(String? condition) {
     case "Light rain":
       return Colors.brown;
     case "Moderate rain":
-      return Colors.orange;
+      return Colors.grey;
     case "Heavy rain at times":
       return Colors.red;
     case "Light freezing rain":

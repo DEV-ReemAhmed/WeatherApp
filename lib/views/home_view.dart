@@ -18,7 +18,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
           title: const Text('Weather App'),
           actions: [
             IconButton(
